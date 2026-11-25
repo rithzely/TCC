@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desirée Cardoso</title>
+</head>
+
+<body>
+    <header id="Cabecalho">
+        <div id="Cabecalho-Conteudo">
+        <div id="Cabecalho-Icone">    
+        <a class="icon" href="#Inicio"><img src="./img/Logo Floral Verde com Pinceladas Coloridas.png" alt="Icone"></a>
+        </div>
+        <div id="Cabecalho-Texto">
+            <p id="Cabecalho-Texto-Nome">Desiree Cardoso</p>
+            <p id="Cabecalho-Texto-Subtitulo">Ateliê Digital</p>
+        </div>
+        </div>
+        <div id="Hamburguer">
+            <button id="Btn-Hamburguer" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+       <nav id="Menu">
+    <ul class="Menu-Botoes">
+        <li><a href="#Inicio">Início</a></li>
+        <li><a href="#Sobre">Sobre</a></li>
+        <li><a href="#Galeria">Portfólio</a></li>
+        <li><a href="#Encomenda">Encomendas</a></li>
+        <li><a href="#Contato">Contato</a></li>
+        <li id="Menu-Botoes-Encomenda">
+            <a href="#Encomenda">Pedir orçamento</a>
+        </li>
+    </ul>
+</nav>
+    </header>
+    <main>
+        <div class="acessibilidade-container">
+            <button id="btn-acessibilidade" aria-label="Abrir opções de acessibilidade" title="Acessibilidade">
+                ♿
+            </button>
+
+            <div id="menu-acessibilidade" class="oculto">
+                <button id="aumentar-fonte">A+ Aumentar Fonte</button>
+                <button id="diminuir-fonte">A- Diminuir Fonte</button>
+                <button id="alto-contraste">🌓 Alto Contraste</button>
+            </div>
+        </div>
+
+    <div id="Fundo-Artistico">    
+
+        <section id="Inicio">
+    <div id="Inicio-Texto">
+        <small>✧ ARTE FEITA PARA SENTIR</small>
+
+        <h1>Oii, oii! Eu sou a <strong>Desiree.</strong></h1>
+
+        <p class="Inicio-BoasVindas">
+            Seja muito bem-vindo(a) ao meu ateliê digital!
+        </p>
+
+        <p class="Inicio-Descricao">
+            Um espaço para conhecer meu universo criativo,
+            descobrir obras e dar vida a ideias únicas através da arte.
+        </p>
+
+        <a href="#Galeria" class="Inicio-Botao">
+            Conheça meu trabalho →
+        </a>
+    </div>
+
+    <div id="Inicio-Imagem">
+        <img src="./img/desiree2.jpeg" alt="Desirée Cardoso">
+
+        <span class="Inicio-Frase">
+            ✧ Criar é dar cor ao que sentimos
+        </span>
+
+        <!-- Decorações artísticas -->
+
+        <span class="Inicio-Decoracao Estrela-Rosa" aria-hidden="true">✦</span>
+
+        <span class="Inicio-Decoracao Ponto-Lilas" aria-hidden="true"></span>
+
+        <span class="Inicio-Decoracao Ponto-Azul" aria-hidden="true"></span>
+
+        <span class="Inicio-Decoracao Ponto-Laranja" aria-hidden="true"></span>
+    </div>
+</section>
+        <section id="Sobre">
+
+            <div id="Sobre-Imagem">
+                <img src="./img/Desiree.jpeg" alt="Desirée Cardoso">
+                <span>ARTE • AFETO • EXPRESSÃO</span>
+            </div>
+
+            <div id="Sobre-Textos">
+                <span class="Sobre-Fita" aria-hidden="true"></span>
+
+                <small>POR TRÁS DAS CORES</small>
+
+                <h2>Conheça a <strong>artista</strong></h2>
+
+                <div id="Sobre-Biografia">
+                    <p>Espaço reservado para a biografia da Desiree. Aqui será apresentado um resumo de sua história com a arte, sua trajetória e os caminhos que a trouxeram até este ateliê.</p>
+
+                    <p>Este espaço também poderá contar sobre suas inspirações, técnicas favoritas e o olhar particular que torna cada criação única.</p>
+                </div>
+
+                <p id="Sobre-Assinatura">Desiree Cardoso</p>
+
+                <img src="./img/paleta-tinta.png"
+     class="Sobre-Paleta"
+     alt="">
+
+            </div>
+
+        </section>
+
+        </div>
+        <section id="Galeria">
+            <article>
+                <small>Seleção de trabalhos</small>
+                <h2>Meu universo em <strong>cores</strong></h2>
+                <p>Explore as diferentes formas, materiais e ideias que fazem parte do meu processo criativo.</p>
+
+            </article>
+            <article id="Galeria-Menu">
+                <ul>
+                <li data-filtro="todas" class="ativo">Todas</li>
+                <li data-filtro="pinturas">Pinturas</li>
+                <li data-filtro="desenhos">Desenhos</li>
+                <li data-filtro="artesanato">Artesanato e Criações Manuais</li>
+                <li data-filtro="ilustracoes">Ilustrações Digitais</li>
+                <li data-filtro="design">Estampas e Design</li>
+                </ul>
+                <div id="Pinturas"  data-categoria="pinturas">
+                    <div>
+                        <img src="./img/FotoEspelho.jpeg" alt="Reflexo">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Pintura</p>
+                    </div>
+                    <div>
+                        <img src="./img/Mascara.jpeg" alt="Mascarada">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Pintura</p>
+                    </div>
+                    <div>
+                        <img src="./img/RMisto.jpeg" alt="Rato Preto e Branco">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Pintura</p>
+                    </div>
+                    <div>
+                        <img src="./img/RBrancoMisto.jpeg" alt="Dois Ratos">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Pintura</p>
+                    </div>
+                    <div>
+                        <img src="./img/RAbraço.jpeg" alt="Ratos Abraçados">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Pintura</p>
+                    </div>
+                    <div>
+                        <img src="./img/CasaFogo.jpeg" alt="Casa em Fogo">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Pintura</p>
+                    </div>
+                    <div>
+                        <img src="./img/Iemanja.jpeg" alt="Iemanja">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Pintura</p>
+                    </div>
+                    <div>
+                        <img src="./img/PorquinhoMulheres.jpeg" alt="Mulheres e Porquinho">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Pintura</p>
+                    </div>
+                </div>
+                <div id="Artes-Digitais" data-categoria="ilustracoes">
+                    <div>
+                        <img src="./img/Colar.jpeg" alt="Mulher com Colar">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Arte digital</p>
+                    </div>
+                    <div>
+                        <img src="./img/Mascarado.jpeg" alt="Mascarado">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Arte digital</p>
+                    </div>
+                    <div>
+                        <img src="./img/OculosAmarelo.jpeg" alt="Mulher com Oculos Amarelo">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Arte digital</p>
+                    </div>
+                    <div>
+                        <img src="./img/Ruiva.jpeg" alt="Mulher Ruiva">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Arte digital</p>
+                    </div>
+                    <div>
+                        <img src="./img/Piscadinha.jpeg" alt="Mulher Piscando">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Arte digital</p>
+                    </div>
+                    <div>
+                        <img src="./img/Smile.jpeg" alt="Mulher com Smiles no rosto">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Arte digital</p>
+                    </div>
+                </div>
+                <div id="Feitos-mão" data-categoria="artesanato">
+                    <div>
+                        <img src="./img/blasphemous.jpeg" alt="Mascara feita a mão">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Feito a mão</p>
+                    </div>
+                    <div>
+                        <img src="./img/CanequinhasFrente.jpeg" alt="Canecas Artesanal">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Feito a mão</p>
+                    </div>
+                    <div>
+                        <img src="./img/RomaoFrente.jpeg" alt="Estatua Feita a Mão">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Feito a mão</p>
+                    </div>
+                    <div>
+                        <img src="./img/Sapão.jpeg" alt="Sapo no Acrilico">
+                        <figcaption>Título da obra</figcaption>
+                        <p>Feito a mão</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+    <!-- Apresentação das encomendas -->
+<section id="Encomenda">
+
+    <div id="Encomenda-Textos">
+
+        <small>Feito especialmente para você</small>
+
+        <h2>Vamos criar algo <strong>único?</strong></h2>
+
+        <p>
+            Conte sua ideia, ocasião ou inspiração.
+            Este é o primeiro passo para transformarmos
+            sua história em uma criação personalizada.
+        </p>
+
+        <h3 class="Encomenda-Subtitulo">Como funciona?</h3>
+
+        <article id="Encomenda-Etapas">
+
+            <div class="Encomenda-Etapa">
+                <span>01</span>
+                <h4>Compartilhe sua ideia</h4>
+                <p>Conte o que você imaginou e compartilhe suas referências.</p>
+            </div>
+
+            <div class="Encomenda-Etapa">
+                <span>02</span>
+                <h4>Vamos conversar</h4>
+                <p>Conversamos sobre os detalhes, valores e prazo da criação.</p>
+            </div>
+
+            <div class="Encomenda-Etapa">
+                <span>03</span>
+                <h4>Sua ideia ganha vida</h4>
+                <p>Crio sua peça personalizada com todo cuidado e carinho.</p>
+            </div>
+
+        </article>
+
+    </div>
+
+    <div id="Encomenda-Formulario">
+
+        <div class="Encomenda-Fita"></div>
+
+        <h2>Peça seu <strong>orçamento</strong></h2>
+
+        <p>Preencha os campos abaixo. Retornarei assim que possível.</p>
+
+        <form id="Encomenda-Forms" action="" method="POST"
+              enctype="multipart/form-data">
+
+            <div class="Encomenda-Campos">
+
+                <div class="Encomenda-Campo">
+                    <label for="nome">Seu nome</label>
+                    <input type="text" name="nome" id="nome"
+                           placeholder="Como posso te chamar?" required>
+                </div>
+
+                <div class="Encomenda-Campo">
+                    <label for="email">Seu e-mail</label>
+                    <input type="email" name="email" id="email"
+                           placeholder="voce@exemplo.com" required>
+                </div>
+
+                <div class="Encomenda-Campo">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" name="telefone" id="telefone"
+                           placeholder="(00) 00000-0000">
+                </div>
+
+                <div class="Encomenda-Campo">
+                    <label for="tipo-arte">O que você deseja?</label>
+
+                    <select name="tipo-arte" id="tipo-arte" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="pinturas">Pinturas</option>
+                        <option value="desenhos">Desenhos</option>
+                        <option value="artesanato">Artesanato e Criações Manuais</option>
+                        <option value="ilustracoes">Ilustrações Digitais</option>
+                        <option value="design">Estampas e Design</option>
+                        <option value="outros">Outra criação personalizada</option>
+                        <option value="indefinido">Ainda não tenho certeza</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <label for="ideia">Conte a sua ideia</label>
+
+            <textarea name="ideia" id="ideia"
+                      placeholder="Descreva o que você imaginou, referências, tamanho..."
+                      required></textarea>
+
+            <div id="Encomenda-Imagens">
+
+                <label for="referencias">
+                    Imagens de referência (opcional)
+                </label>
+
+                <div class="Encomenda-Anexo" id="Area-Anexo">
+
+                    <span class="Anexo-Icone">
+                        <i class="bi bi-cloud-arrow-up"></i>
+                    </span>
+
+                    <p>Arraste e solte suas imagens aqui</p>
+
+                    <small>ou</small>
+
+                    <label for="referencias" class="Anexo-Botao">
+                        Selecionar imagens
+                    </label>
+
+                    <input type="file" id="referencias"
+                           name="referencias[]"
+                           accept="image/jpeg,image/png,image/webp"
+                           multiple>
+
+                    <small>JPG, PNG ou WEBP • Até 5 MB por imagem</small>
+
+                </div>
+
+                <p id="Anexo-Contador">0 de 5 imagens selecionadas</p>
+
+                <p id="Anexo-Erro" role="alert"></p>
+
+                <div id="Anexo-Previa"></div>
+
+            </div>
+
+            <button type="submit">
+                Enviar solicitação
+                <i class="bi bi-arrow-right"></i>
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<section id="Contato">
+
+    <div id="Contato-Textos">
+        <small>Vamos conversar?</small>
+        <h2>Encontre meu <strong>ateliê</strong></h2>
+        <p>Para encomendas, dúvidas ou apenas para acompanhar novas criações.</p>
+    </div>
+
+    <div id="Contato-Cards">
+
+        <!-- WHATSAPP -->
+        <!-- Inserir número com código do país e DDD -->
+
+        <a class="Contatos-Card"
+           href="https://wa.me/5551991629310"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <div class="Contato-Icone">
+                <i class="bi bi-whatsapp"></i>
+            </div>
+
+            <div class="Contato-Info">
+                <small>WhatsApp</small>
+                <p>Enviar mensagem</p>
+            </div>
+
+            <span class="Contato-Seta">↗</span>
+        </a>
+
+
+        <!-- INSTAGRAM -->
+        <!-- Inserir nome de usuário da artista -->
+
+        <a class="Contatos-Card"
+           href="https://www.instagram.com/arte_da_dec?lqvp=a3k0b29oY2Qwd2hs"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <div class="Contato-Icone">
+                <i class="bi bi-instagram"></i>
+            </div>
+
+            <div class="Contato-Info">
+                <small>Instagram</small>
+                <p>@arte_da_dec</p>
+            </div>
+
+            <span class="Contato-Seta">↗</span>
+        </a>
+
+
+        <!-- E-MAIL -->
+        <!-- Inserir endereço de e-mail da artista -->
+
+        <a class="Contatos-Card"
+           href="mailto:EMAIL_DA_ARTISTA">
+
+            <div class="Contato-Icone">
+                <i class="bi bi-envelope"></i>
+            </div>
+
+            <div class="Contato-Info">
+                <small>E-mail</small>
+                <p>Enviar e-mail</p>
+            </div>
+
+            <span class="Contato-Seta">↗</span>
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <article id="Rodape">
+        <div id="Rodape-Superior">
+
+            <div id="Rodape-Texto">
+                <img class="Rodape-Logo" src="./img/Logo Floral Verde com Pinceladas Coloridas.png" alt="Logo Desiree Cardoso">
+
+                <div>
+                    <h3>Desiree Cardoso</h3>
+                    <p>ARTE FEITA PARA SENTIR.</p>
+                </div>
+            </div>
+
+            <nav id="Rodape-menu">
+                <ul class="Menu-Botoes">
+                    <li><a href="#Inicio">Início</a></li>
+                    <li><a href="#Sobre">Sobre</a></li>
+                    <li><a href="#Galeria">Portfólio</a></li>
+                    <li><a href="#Encomenda">Encomendas</a></li>
+                    <li><a href="#Contato">Contato</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <div id="Rodape-Inferior">
+            <p>&copy; 2026 Desiree Cardoso</p>
+            <p>Desenvolvido com cuidado por <strong>Bloom Byte</strong></p>
+        </div>
+    </article>
+</footer>
+
+<!-- ====================================== -->
+<!-- MODAL DE VISUALIZAÇÃO DAS OBRAS -->
+<!-- ====================================== -->
+
+<dialog id="Modal-Galeria" aria-label="Visualização da obra">
+
+    <button id="Modal-Fechar" type="button" aria-label="Fechar imagem">
+        <i class="bi bi-x-lg"></i>
+    </button>
+
+    <button id="Modal-Anterior" type="button" aria-label="Imagem anterior">
+        <i class="bi bi-chevron-left"></i>
+    </button>
+
+    <div id="Modal-Conteudo">
+        <img id="Modal-Imagem" alt="">
+        <h3 id="Modal-Titulo"></h3>
+        <p id="Modal-Categoria"></p>
+        <span id="Modal-Contador"></span>
+    </div>
+
+    <button id="Modal-Proximo" type="button" aria-label="Próxima imagem">
+        <i class="bi bi-chevron-right"></i>
+    </button>
+
+</dialog>
+
+<!-- ====================================== -->
+<!-- BOTÃO VOLTAR AO TOPO -->
+<!-- ====================================== -->
+
+<button id="Voltar-Topo" type="button" aria-label="Voltar ao topo">
+    <i class="bi bi-arrow-up"></i>
+</button>
+
+<script src="./js/main.js"></script>
+
+</body>
+</html>

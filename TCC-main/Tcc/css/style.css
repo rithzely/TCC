@@ -1,0 +1,2663 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,600;1,700&display=swap');
+
+:root {
+    --verde-principal: #176747;
+    --verde-escuro: #153029;
+    --verde-claro: #E7F1E7;
+    --verde-rodape: #0D4633;
+    --fundo-principal: #FAF9F4;
+    --fundo-bege: #F4F1EA;
+    --fundo-rosa: #F8EDF1;
+    --rosa: #E84D91;
+    --amarelo: #F8D36D;
+    --azul: #70B0DA;
+    --lilas: #AE8BD5;
+    --laranja: #F28D59;
+    --branco: #FFFFFF;
+    --texto-secundario: #60716B;
+    --verde-escuro: #153029;
+    --verde-principal: #176B47;
+    --verde-claro: #83B65B;
+    --rosa: #F54B91;
+    --amarelo: #F9CF53;
+    --azul: #65BDE5;
+    --lilas: #AC87D5;
+    --laranja: #F5A16C;
+    --fundo: #FAF9F4;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    background-color: var(--fundo-principal);
+    color: var(--verde-escuro);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#Cabecalho {
+    width: 100%;
+    min-height: 80px;
+    padding: 0 5%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #C8DEBB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #A8C69A;
+    z-index: 1000;
+  
+}
+
+#Cabecalho-Conteudo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+#Cabecalho-Texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+#Cabecalho-Texto-Nome {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--verde-escuro);
+}
+
+#Cabecalho-Texto-Subtitulo {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--texto-secundario);
+}
+
+#Menu {
+    width: auto;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.icon img {
+  height: 44px;
+  width: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.Menu-Botoes {
+  font-size: 14px;
+  list-style: none;
+  display: flex;
+  gap: 12px;
+}
+
+.Menu-Botoes li {
+  display: flex;
+  align-items: center;
+}
+
+.Menu-Botoes a {
+  position: relative;
+  padding: 5px;
+  color: #064E3B;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.Menu-Botoes a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #9c157b;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-out;
+}
+
+.Menu-Botoes a:hover::after {
+  transform: scaleX(1);
+}
+
+#Menu-Botoes-Encomenda a {
+    padding: 14px 24px;
+    border-radius: 50px;
+    color: var(--branco);
+    background-color: var(--verde-principal);
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(23, 103, 71, 0.15);
+    transition: background-color 0.3s;
+}
+
+#Menu-Botoes-Encomenda a:hover {
+    background-color: var(--verde-rodape);
+}
+
+#Menu-Botoes-Encomenda a::after {
+    display: none;
+}
+
+#Btn-Hamburguer {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  padding: 15px 10px;
+  background: transparent;
+  background-color: #E5F2E9;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+}
+
+#Btn-Hamburguer span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #176B47;
+  border-radius: 4px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Corrigido para #Btn-Hamburguer.ativo */
+#Btn-Hamburguer.ativo span:nth-child(1) {
+  transform: translateY(3px) rotate(45deg);
+}
+
+#Btn-Hamburguer.ativo span:nth-child(2) {
+  opacity: 0;
+}
+
+#Btn-Hamburguer.ativo span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 760px) {
+  
+  #Btn-Hamburguer {
+    display: flex;
+  }
+
+  
+  #Menu {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  #Menu.ativo {
+    max-height: 420px;
+    padding: 16px 0;
+  }
+
+  .Menu-Botoes {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+}
+
+/* Fixa o botão no canto da tela */
+.acessibilidade-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+#btn-acessibilidade {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #064E3B; /* Combina com sua paleta verde */
+  color: #ffffff;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#menu-acessibilidade {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 10px;
+}
+
+#menu-acessibilidade.oculto {
+  display: none;
+}
+
+#menu-acessibilidade button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Estilos aplicados quando o Alto Contraste é ativado */
+body.alto-contraste {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body.alto-contraste a,
+body.alto-contraste h1,
+body.alto-contraste h2 {
+  color: #ffff00 !important; /* Amarelo de alto contraste */
+}
+
+/* ==================== INÍCIO ==================== */
+
+
+/* =========================
+   SEÇÃO INICIAL
+========================= */
+
+#Inicio {
+    min-height: calc(100vh - 80px);
+    padding: 70px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    overflow: hidden;
+
+    background-color: var(--fundo-principal);
+    background-image: linear-gradient(
+        rgba(250, 249, 244, 0.65),
+        rgba(250, 249, 244, 0.65)
+    ), url('../img/Fundo Branco com Explosões de Tinta Coloridas.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Textos da apresentação */
+
+#Inicio-Texto {
+    max-width: 780px;
+    box-sizing: border-box;
+    flex: 1;
+    position: relative;
+    isolation: isolate;
+    min-width: 0;
+    padding: 45px;
+}
+
+/* Folha de papel principal */
+
+#Inicio-Texto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #FFFDF5;
+    border: 1px solid #EAE5D8;
+    border-radius: 8px;
+    transform: rotate(-2deg);
+    box-shadow: 0 15px 35px #15302915;
+    z-index: -1;
+}
+
+/* Folha verde atrás do papel */
+
+#Inicio-Texto::after {
+    content: "";
+    position: absolute;
+    inset: 8px -10px -8px 10px;
+    background-color: #83B65B;
+    border-radius: 8px;
+    transform: rotate(3deg);
+    z-index: -2;
+}
+
+/* Fita adesiva amarela */
+
+.Inicio-Fita {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    width: 115px;
+    height: 38px;
+
+    background: repeating-linear-gradient(
+        65deg,
+        #F9CF53CC 0px,
+        #F9CF53CC 8px,
+        #FCE9A5CC 8px,
+        #FCE9A5CC 10px
+    );
+
+    transform: translateX(-50%) rotate(5deg);
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Destaque amarelo */
+
+#Inicio-Texto small {
+    display: inline-block;
+    padding: 9px 16px;
+    background-color: #FCE9A5;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--verde-principal);
+}
+
+/* Título principal */
+
+#Inicio-Texto h1 {
+    font-size: clamp(40px, 5.5vw, 88px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin: 25px 0;
+}
+
+/* Nome da artista */
+
+#Inicio-Texto h1 strong {
+    display: block;
+    width: fit-content;
+    position: relative;
+    isolation: isolate;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    color: var(--verde-principal);
+}
+
+/* Pincelada amarela atrás do nome */
+
+#Inicio-Texto h1 strong::after {
+    content: "";
+    position: absolute;
+    left: -3%;
+    bottom: 5%;
+    width: 106%;
+    height: 20%;
+    background-color: #F9CF53;
+    border-radius: 45% 25% 40% 30%;
+    transform: rotate(-3deg);
+    opacity: 0.85;
+    z-index: -1;
+}
+
+/* Frase de boas-vindas */
+
+.Inicio-BoasVindas {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 26px;
+    color: #D72D79;
+    margin-bottom: 22px;
+}
+
+/* Descrição */
+
+.Inicio-Descricao {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--texto-secundario);
+    max-width: 550px;
+}
+
+/* Botão do portfólio */
+
+.Inicio-Botao {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 17px 25px;
+    background-color: var(--verde-principal);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 10px 25px #17674726;
+    transition: 0.3s ease;
+}
+
+.Inicio-Botao:hover {
+    background-color: var(--verde-rodape);
+    transform: translateY(-4px);
+    box-shadow: 5px 5px 0 #F9CF53;
+}
+
+/* =========================
+   FOTOGRAFIA DA ARTISTA
+========================= */
+
+#Inicio-Imagem {
+    position: relative;
+    width: 40%;
+    max-width: 480px;
+    isolation: isolate;
+}
+
+/* Forma orgânica da fotografia */
+
+#Inicio-Imagem img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.95;
+    object-fit: cover;
+    object-position: center;
+    border: 10px solid white;
+    border-radius: 43% 57% 55% 45% / 46% 42% 58% 54%;
+    box-shadow: 0 25px 50px #15302920;
+}
+
+/* Forma verde atrás da fotografia */
+
+#Inicio-Imagem::before {
+    content: "";
+    position: absolute;
+    inset: -12px -20px 10px 15px;
+    background-color: #83B65B;
+    border-radius: 55% 45% 40% 60% / 45% 55% 45% 55%;
+    transform: rotate(12deg);
+    z-index: -1;
+}
+
+/* Estrela amarela */
+
+#Inicio-Imagem::after {
+    content: "✦";
+    position: absolute;
+    top: -25px;
+    right: -15px;
+    font-size: 85px;
+    color: #F9CF53;
+    line-height: 1;
+    pointer-events: none;
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+/* Plaquinha com a frase */
+
+.Inicio-Frase {
+    position: absolute;
+    bottom: 0;
+    left: -30px;
+    background-color: #FCE9A5;
+    color: var(--verde-principal);
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 14px;
+    transform: rotate(-5deg);
+    box-shadow: 0 15px 30px #15302915;
+    z-index: 2;
+}
+
+/* =========================
+   DECORAÇÕES COLORIDAS
+========================= */
+
+.Inicio-Decoracao {
+    position: absolute;
+    pointer-events: none;
+    line-height: 1;
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+/* Estrela rosa */
+
+.Estrela-Rosa {
+    bottom: 18%;
+    left: -25px;
+    color: #F54B91;
+    font-size: 48px;
+    animation-delay: 0.5s;
+}
+
+/* Bolinha lilás */
+
+.Ponto-Lilas {
+    top: 8%;
+    left: -30px;
+    width: 15px;
+    height: 15px;
+    background-color: #AC87D5;
+    border-radius: 50%;
+    animation-delay: 1s;
+}
+
+/* Bolinha azul */
+
+.Ponto-Azul {
+    bottom: 20%;
+    right: -25px;
+    width: 18px;
+    height: 18px;
+    background-color: #65BDE5;
+    border-radius: 50%;
+    animation-delay: 1.5s;
+}
+
+/* Bolinha laranja */
+
+.Ponto-Laranja {
+    bottom: -25px;
+    right: 25%;
+    width: 12px;
+    height: 12px;
+    background-color: #F5A16C;
+    border-radius: 50%;
+    animation-delay: 2s;
+}
+
+/* Animação das decorações */
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+/* Acessibilidade das animações */
+
+@media (prefers-reduced-motion: reduce) {
+    #Inicio-Imagem::after,
+    .Inicio-Decoracao {
+        animation: none;
+    }
+}
+
+
+/* ==================== PORTFÓLIO ==================== */
+
+/* =========================
+          PORTFÓLIO
+========================= */
+
+#Galeria {
+    width: 100%;
+    padding: 100px 10%;
+    background-color: #F9F8F3;
+    scroll-margin-top: 80px;
+}
+
+/* Fundo artístico do portfólio */
+
+#Galeria {
+    background-color: #F2F7ED;
+
+    background-image: linear-gradient(
+        to right,
+        rgba(242, 247, 237, 0.25) 0%,
+        rgba(242, 247, 237, 0.95) 20%,
+        #F2F7ED 35%,
+        #F2F7ED 65%,
+        rgba(242, 247, 237, 0.95) 80%,
+        rgba(242, 247, 237, 0.25) 100%
+    ), url('../img/Moldura\ Vibrante\ de\ Salpicos\ Coloridos.png');
+
+    background-size: 100% 100%, 100% auto;
+    background-position: center, center top;
+    background-repeat: no-repeat, repeat-y;
+}
+
+/* Textos da galeria */
+
+#Galeria > article:first-child {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+#Galeria > article:first-child small {
+    color: #176B47;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+#Galeria h2 {
+    font-size: clamp(32px, 5vw, 64px);
+    color: #15352C;
+    line-height: 1.2;
+    margin: 25px 0;
+}
+
+#Galeria h2 strong {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    color: #176B47;
+}
+
+#Galeria > article:first-child p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #64766F;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Organização da galeria */
+
+#Galeria-Menu {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Menu de categorias */
+
+#Galeria-Menu > ul {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+#Galeria-Menu > ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border: 1px solid #DCE5D8;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+    color: #153029;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Pontinhos coloridos */
+
+#Galeria-Menu > ul li::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Todas */
+
+#Galeria-Menu > ul li:nth-child(1)::before {
+    background-color: #81B65B;
+}
+
+/* Pinturas */
+
+#Galeria-Menu > ul li:nth-child(2)::before {
+    background-color: #F5C84C;
+}
+
+/* Desenhos */
+
+#Galeria-Menu > ul li:nth-child(3)::before {
+    background-color: #B591DB;
+}
+
+/* Artesanato e Criações Manuais */
+
+#Galeria-Menu > ul li:nth-child(4)::before {
+    background-color: #81B65B;
+}
+
+/* Ilustrações Digitais */
+
+#Galeria-Menu > ul li:nth-child(5)::before {
+    background-color: #59B9DF;
+}
+
+/* Estampas e Design */
+
+#Galeria-Menu > ul li:nth-child(6)::before {
+    background-color: #EF75AA;
+}
+
+/* Efeito ao passar o mouse */
+
+#Galeria-Menu > ul li:hover {
+    transform: translateY(-3px);
+    border-color: #81B65B;
+    box-shadow: 0 5px 12px #15302915;
+}
+
+/* Categoria selecionada */
+
+#Galeria-Menu > ul li.ativo {
+    background-color: #176B47;
+    border-color: #176B47;
+    color: #FFFFFF;
+}
+
+#Galeria-Menu > ul li.ativo::before {
+    background-color: #FFFFFF;
+}
+
+/* Grupos de obras */
+
+#Pinturas,
+#Artes-Digitais,
+#Feitos-mão {
+    display: contents;
+}
+
+/* Cards individuais */
+
+#Pinturas > div,
+#Artes-Digitais > div,
+#Feitos-mão > div {
+    min-width: 0;
+    overflow: hidden;
+    background-color: #FFFEF8;
+    padding: 14px;
+    border: 1px solid #DCE5D8;
+    border-radius: 8px 35px 8px 8px;
+    box-shadow: 0 8px 20px #15302912;
+    transition: 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+
+#Pinturas > div:hover,
+#Artes-Digitais > div:hover,
+#Feitos-mão > div:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px #15302925;
+    border-color: #81B65B;
+}
+
+/* Imagens das obras */
+
+#Galeria-Menu img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 5px 24px 5px 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#Galeria-Menu img:hover {
+    transform: scale(1.02);
+}
+
+/* Título das obras */
+
+#Galeria-Menu figcaption {
+    font-size: 17px;
+    font-weight: 700;
+    color: #15352C;
+    margin-top: 16px;
+}
+
+/* Categoria das obras */
+
+#Galeria-Menu p {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: #64766F;
+    margin-top: 6px;
+    margin-bottom: 5px;
+}
+
+/* Pontinhos coloridos das categorias */
+
+#Galeria-Menu p::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #81B65B;
+    flex-shrink: 0;
+}
+
+/* Pinturas - amarelo */
+
+#Pinturas p::before {
+    background-color: #F5C84C;
+}
+
+/* Artes digitais - azul */
+
+#Artes-Digitais p::before {
+    background-color: #59B9DF;
+}
+
+/* Criações manuais - verde */
+
+#Feitos-mão p::before {
+    background-color: #81B65B;
+}
+
+/* =========================
+        SOBRE A ARTISTA
+========================= */
+
+#Sobre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 100px 10%;
+
+    background-color: var(--fundo-principal);
+    background-image: linear-gradient(
+        rgba(250, 249, 244, 0.80),
+        rgba(250, 249, 244, 0.80)
+    ), url('../img/Fundo Branco com Explosões de Tinta Coloridas.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Fotografia da artista */
+
+#Sobre-Imagem {
+    position: relative;
+    width: 40%;
+    max-width: 450px;
+    flex-shrink: 0;
+}
+
+#Sobre-Imagem img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.85;
+    object-fit: cover;
+    object-position: center;
+    border: 12px solid #FFFFFF;
+    border-radius: 46% 54% 45% 55% / 42% 48% 52% 58%;
+    box-shadow: 0 25px 50px rgba(21, 48, 41, 0.12);
+}
+
+/* Etiqueta amarela da fotografia */
+
+#Sobre-Imagem span {
+    position: absolute;
+    bottom: 25px;
+    right: -20px;
+    padding: 15px 24px;
+    background-color: #F5C84C;
+    color: #55451B;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    transform: rotate(4deg);
+}
+
+/* Textos */
+
+#Sobre-Textos {
+    flex: 1;
+    min-width: 0;
+}
+
+#Sobre-Textos small {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #176B47;
+}
+
+#Sobre-Textos h2 {
+    font-size: clamp(32px, 4.5vw, 64px);
+    line-height: 1.2;
+    color: #153029;
+    margin: 25px 0 35px;
+}
+
+#Sobre-Textos h2 strong {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    color: #176B47;
+}
+
+/* Biografia com linha lateral */
+
+#Sobre-Biografia {
+    border-left: 2px solid #C5D8C9;
+    padding-left: 25px;
+}
+
+#Sobre-Biografia p {
+    font-size: 17px;
+    line-height: 1.9;
+    color: #64766F;
+    margin-bottom: 18px;
+}
+
+#Sobre-Biografia p:last-child {
+    margin-bottom: 0;
+}
+
+/* Assinatura */
+
+#Sobre-Assinatura {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 600;
+    color: #176B47;
+    margin-top: 30px;
+}
+
+/* Responsividade */
+
+@media (max-width: 1000px) {
+    #Sobre {
+        padding: 80px 6%;
+        gap: 45px;
+    }
+}
+
+@media (max-width: 760px) {
+    #Sobre {
+        flex-direction: column;
+        padding: 60px 7%;
+        gap: 50px;
+    }
+
+    #Sobre-Imagem {
+        width: 85%;
+        max-width: 340px;
+    }
+
+    #Sobre-Imagem span {
+        right: -10px;
+        font-size: 9px;
+        padding: 12px 18px;
+    }
+
+    #Sobre-Textos {
+        width: 100%;
+    }
+
+    #Sobre-Textos h2 {
+        margin: 20px 0 25px;
+    }
+
+    #Sobre-Biografia p {
+        font-size: 15px;
+    }
+}
+
+/* Responsividade para tablets */
+
+@media (max-width: 1000px) {
+    #Galeria {
+        padding: 70px 6%;
+    }
+
+    #Galeria-Menu {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Responsividade para celulares */
+
+@media (max-width: 600px) {
+    #Galeria {
+        padding: 60px 6%;
+    }
+
+    #Galeria-Menu {
+        grid-template-columns: 1fr;
+    }
+
+    #Galeria-Menu > ul li {
+        font-size: 11px;
+        padding: 10px 14px;
+    }
+}
+
+/* =========================================
+                ENCOMENDAS
+========================================= */
+
+#Encomenda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+    padding: 100px 10%;
+    background: transparent;
+    scroll-margin-top: 80px;
+    overflow: hidden;
+}
+
+/* =========================================
+            APRESENTAÇÃO DA SEÇÃO
+========================================= */
+
+#Encomenda-Textos {
+    width: 100%;
+    max-width: 1100px;
+    text-align: center;
+}
+
+/* Etiqueta amarela */
+
+#Encomenda-Textos > small {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FCE9A5;
+    color: #176B47;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Título principal */
+
+#Encomenda-Textos > h2 {
+    font-size: clamp(36px, 5vw, 65px);
+    color: #153029;
+    line-height: 1.2;
+    margin: 25px 0;
+}
+
+#Encomenda-Textos > h2 strong {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #176B47;
+}
+
+/* Pincelada amarela */
+
+#Encomenda-Textos > h2 strong::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: -3%;
+    width: 106%;
+    height: 12px;
+    background-color: #F5C84C;
+    border-radius: 45% 15% 35% 20%;
+    transform: rotate(-3deg);
+    z-index: -1;
+}
+
+/* Descrição inicial */
+
+#Encomenda-Textos > p {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #435C50;
+}
+
+/* =========================================
+              COMO FUNCIONA
+========================================= */
+
+.Encomenda-Subtitulo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #153029;
+    margin: 50px 0 30px;
+}
+
+/* Organização das três etapas */
+
+#Encomenda-Etapas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Cards das etapas */
+
+.Encomenda-Etapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 22px;
+    background-color: #FFFFFF;
+    border: 1px solid #DCE5D8;
+    border-radius: 8px 30px 8px 8px;
+    box-shadow: 0 8px 25px #1530290D;
+    transition: transform 0.3s ease;
+}
+
+.Encomenda-Etapa:hover {
+    transform: translateY(-5px);
+}
+
+/* Números das etapas */
+
+.Encomenda-Etapa span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* Etapa 01 - Verde */
+
+.Encomenda-Etapa:nth-child(1) span {
+    background-color: #176B47;
+    color: #FFFFFF;
+}
+
+/* Etapa 02 - Amarelo */
+
+.Encomenda-Etapa:nth-child(2) span {
+    background-color: #F5C84C;
+    color: #153029;
+}
+
+/* Etapa 03 - Lilás */
+
+.Encomenda-Etapa:nth-child(3) span {
+    background-color: #B591DB;
+    color: #153029;
+}
+
+/* Textos das etapas */
+
+.Encomenda-Etapa h4 {
+    font-size: 17px;
+    color: #153029;
+    margin: 0 0 12px;
+}
+
+.Encomenda-Etapa p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #52635C;
+    margin: 0;
+}
+
+/* =========================================
+           PAPEL DO FORMULÁRIO
+========================================= */
+
+#Encomenda-Formulario {
+    position: relative;
+    isolation: isolate;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 750px;
+    padding: 45px;
+    margin: 20px auto;
+}
+
+/* Folha verde atrás */
+
+#Encomenda-Formulario::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #81B65B;
+    border-radius: 8px;
+    transform: rotate(2deg);
+    z-index: -3;
+}
+
+/* Folha lilás atrás */
+
+#Encomenda-Formulario::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #B591DB;
+    border-radius: 8px;
+    transform: rotate(-2deg);
+    z-index: -2;
+}
+
+/* Folha principal */
+
+#Encomenda-Formulario > .Encomenda-Fita::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #FCFDF7;
+    border: 1px solid #C9DCC2;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px #15302915;
+    z-index: -1;
+}
+
+/* Fita adesiva amarela */
+
+.Encomenda-Fita::after {
+    content: "";
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    width: 125px;
+    height: 38px;
+    background: repeating-linear-gradient(
+        60deg,
+        #F5C84C 0px,
+        #F5C84C 8px,
+        #FFF0B3 8px,
+        #FFF0B3 10px
+    );
+    transform: translateX(-50%) rotate(-5deg);
+    z-index: 2;
+}
+
+/* Título do formulário */
+
+#Encomenda-Formulario > h2 {
+    text-align: center;
+    font-size: clamp(28px, 4vw, 42px);
+    color: #153029;
+    margin: 0 0 15px;
+}
+
+#Encomenda-Formulario > h2 strong {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #176B47;
+}
+
+#Encomenda-Formulario > p {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #52635C;
+    margin: 0 0 35px;
+}
+
+/* =========================================
+              CAMPOS DO FORMULÁRIO
+========================================= */
+
+#Encomenda-Forms {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Campos um abaixo do outro */
+
+.Encomenda-Campos {
+    display: flex;
+    flex-direction: column;
+}
+
+.Encomenda-Campo {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Etiquetas dos campos */
+
+#Encomenda-Forms label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #153029;
+    margin-bottom: 10px;
+}
+
+/* Inputs, select e textarea */
+
+#Encomenda-Forms input:not([type="file"]),
+#Encomenda-Forms select,
+#Encomenda-Forms textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 24px;
+    background-color: #EDF4E8;
+    border: 1px solid #CDDCC7;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #153029;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Campo selecionado */
+
+#Encomenda-Forms input:not([type="file"]):focus,
+#Encomenda-Forms select:focus,
+#Encomenda-Forms textarea:focus {
+    border-color: #176B47;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 3px #176B4715;
+}
+
+#Encomenda-Forms textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* =========================================
+              ANEXOS DE IMAGENS
+========================================= */
+
+#Encomenda-Imagens {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 5px 0 25px;
+}
+
+.Encomenda-Anexo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 25px 15px;
+    background-color: #E6F1E2;
+    border: 2px dashed #A9C69B;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.Encomenda-Anexo:hover,
+.Encomenda-Anexo.arrastando {
+    border-color: #176B47;
+    background-color: #DDECD7;
+}
+
+/* Ícone de upload */
+
+.Anexo-Icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #CDE3C4;
+    color: #176B47;
+    font-size: 22px;
+}
+
+.Encomenda-Anexo p {
+    font-size: 14px;
+    color: #153029;
+    margin: 0;
+}
+
+.Encomenda-Anexo small {
+    font-size: 11px;
+    color: #52635C;
+}
+
+/* Botão de selecionar imagens */
+
+#Encomenda-Forms .Anexo-Botao {
+    display: inline-block;
+    background-color: #176B47;
+    color: #FFFFFF;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0;
+}
+
+#Encomenda-Forms .Anexo-Botao:hover {
+    background-color: #125537;
+}
+
+/* Esconde visualmente o input original */
+
+#referencias {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+.Encomenda-Anexo:focus-within {
+    outline: 2px solid #176B47;
+    outline-offset: 3px;
+}
+
+/* Contador e mensagens */
+
+#Anexo-Contador {
+    font-size: 12px;
+    color: #64766F;
+    margin: 12px 0;
+}
+
+#Anexo-Erro {
+    font-size: 13px;
+    color: #B83232;
+    margin-bottom: 10px;
+}
+
+#Anexo-Erro:empty,
+#Anexo-Previa:empty {
+    display: none;
+}
+
+/* Miniaturas das imagens */
+
+#Anexo-Previa {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(75px, 95px));
+    gap: 12px;
+}
+
+.Anexo-Imagem {
+    position: relative;
+    min-width: 0;
+}
+
+.Anexo-Imagem img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.Anexo-Remover {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 50%;
+    background-color: #153029;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+/* =========================================
+              BOTÃO DE ENVIO
+========================================= */
+
+#Encomenda-Forms button[type="submit"] {
+    width: 100%;
+    padding: 17px;
+    background-color: #176B47;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 20px #176B4725;
+    transition: 0.3s;
+}
+
+#Encomenda-Forms button[type="submit"]:hover {
+    background-color: #125537;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+              RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 768px) {
+
+    #Encomenda {
+        padding: 70px 7%;
+        gap: 45px;
+    }
+
+    #Encomenda-Etapas {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        gap: 18px;
+    }
+
+    .Encomenda-Etapa {
+        padding: 25px 20px;
+    }
+
+    #Encomenda-Formulario {
+        padding: 35px 22px;
+        max-width: 100%;
+    }
+
+    #Encomenda-Formulario::before {
+        transform: rotate(1deg);
+    }
+
+    #Encomenda-Formulario::after {
+        transform: rotate(-1deg);
+    }
+
+    #Encomenda-Textos > small {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .Encomenda-Fita::after {
+        width: 95px;
+        height: 30px;
+        top: -15px;
+    }
+}
+
+
+/* =========================
+   SEÇÃO DE CONTATO
+/* ================= CONTATO ================= */
+
+#Contato {
+    width: 100%;
+    max-width: none;
+    padding: 90px 8%;
+    margin: 0;
+    background: #EAF3E4;
+    text-align: center;
+    box-sizing: border-box;
+    scroll-margin-top: 80px;
+}
+
+/* Etiqueta amarela */
+
+#Contato small:first-child {
+    display: inline-block;
+    color: #176B47;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+#Contato > small,
+#Contato article > small {
+    background-color: #FCE9A5;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+/* Título */
+
+#Contato h2 {
+    font-size: clamp(36px, 4.5vw, 65px);
+    color: #153029;
+    margin: 25px 0 15px;
+}
+
+#Contato h2 strong {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #176B47;
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+}
+
+#Contato h2 strong::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: -3%;
+    width: 106%;
+    height: 12px;
+    background-color: #F5C84C;
+    border-radius: 45% 15% 35% 20%;
+    transform: rotate(-3deg);
+    z-index: -1;
+}
+
+/* Descrição */
+
+#Contato p {
+    color: #435C50;
+    line-height: 1.8;
+}
+
+/* Organização dos cards */
+
+#Contato :has(> .Contatos-Card) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1050px;
+    margin: 45px auto 0;
+}
+
+/* Cards individuais */
+
+.Contatos-Card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 35px 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #CBDDC5;
+    border-radius: 8px 30px 8px 8px;
+    box-shadow: 0 6px 0 #81B658;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.Contatos-Card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 0 #81B658;
+}
+
+/* Ícones */
+
+.Contato-Icone {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #176B47;
+    font-size: 30px;
+}
+
+/* Cores dos ícones */
+
+.Contatos-Card:nth-child(1) .Contato-Icone {
+    background-color: #DCEACD;
+}
+
+.Contatos-Card:nth-child(2) .Contato-Icone {
+    background-color: #E8DDF5;
+}
+
+.Contatos-Card:nth-child(3) .Contato-Icone {
+    background-color: #FCE9A5;
+}
+
+/* Textos dos cards */
+
+.Contato-Info small {
+    font-size: 18px !important;
+    font-weight: 700;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    color: #153029 !important;
+}
+
+#Contato .Contato-Info p {
+    font-size: 13px;
+    color: #64766F;
+    margin-top: 8px;
+}
+
+.Contatos-Card > i,
+.Contatos-Card > span {
+    color: #176B47;
+    font-size: 18px;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+
+    #Contato {
+        padding: 70px 7%;
+    }
+
+    #Contato :has(> .Contatos-Card) {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        gap: 25px;
+    }
+
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    background-color: #0D4935;
+    color: white;
+    padding: 60px 10% 25px;
+}
+
+#Rodape {
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* Parte superior do rodapé */
+
+#Rodape-Superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 35px;
+}
+
+/* Logo e identificação da artista */
+
+#Rodape-Texto {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.Rodape-Logo {
+    width: 50px;
+    height: 50px;
+    max-width: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    padding: 4px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+#Rodape-Texto h3 {
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 5px;
+}
+
+#Rodape-Texto p {
+    color: #B6C9BF;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* Menu de navegação */
+
+#Rodape-menu .Menu-Botoes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#Rodape-menu a {
+    color: #D5E1DA;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+#Rodape-menu a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+/* Parte inferior do rodapé */
+
+#Rodape-Inferior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 25px;
+}
+
+#Rodape-Inferior p {
+    font-size: 11px;
+    color: #B6C9BF;
+    margin: 0;
+}
+
+#Rodape-Inferior strong {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* Responsividade */
+
+@media (max-width: 1000px) {
+    #Rodape-Superior {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #Rodape-menu .Menu-Botoes {
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 40px 6% 25px;
+    }
+
+    #Rodape-Inferior {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #Rodape-Texto {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #Inicio {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 8%;
+        gap: 50px;
+    }
+
+    #Inicio-Texto h1 strong {
+        margin: 0 auto;
+    }
+
+    #Inicio-Texto small {
+        font-size: 10px;
+    }
+
+    .Inicio-BoasVindas {
+        font-size: 22px;
+    }
+
+    .Inicio-Descricao {
+        font-size: 15px;
+        margin: 0 auto;
+    }
+
+    #Inicio-Imagem {
+        width: 85%;
+        max-width: 320px;
+        margin: 15px auto 30px;
+    }
+
+    #Inicio-Imagem::after {
+        font-size: 55px;
+        right: -10px;
+    }
+
+    .Inicio-Frase {
+        font-size: 12px;
+        padding: 12px 15px;
+        left: -10px;
+    }
+
+    .Estrela-Rosa {
+        font-size: 35px;
+        left: -15px;
+    }
+
+    .Ponto-Lilas {
+        left: -15px;
+    }
+
+    .Ponto-Azul {
+        right: -15px;
+    }
+}
+
+
+/* Fundo artístico contínuo */
+
+#Fundo-Artistico,
+#Contato {
+    background-color: var(--fundo-principal);
+
+    background-image: linear-gradient(
+        rgba(250, 249, 244, 0.35),
+        rgba(250, 249, 244, 0.35)
+    ), url('../img/Moldura\ Vibrante\ de\ Salpicos\ Coloridos.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Deixar as seções transparentes */
+
+#Inicio,
+#Sobre {
+    background: transparent;
+}
+
+
+/* =====================================
+   SOBRE - DECORAÇÕES ARTÍSTICAS
+===================================== */
+
+/* Organização do bloco de texto */
+
+#Sobre-Textos {
+    position: relative;
+    isolation: isolate;
+    flex: 1;
+    min-width: 0;
+    padding: 45px;
+    box-sizing: border-box;
+}
+
+/* Papel verde clarinho */
+
+#Sobre-Textos::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #E8F3E5;
+    border: 1px solid #C9DBC3;
+    border-radius: 8px;
+    transform: rotate(-1.5deg);
+    box-shadow: 0 15px 35px #15302915;
+    z-index: -1;
+}
+
+/* Folha lilás atrás do papel */
+
+#Sobre-Textos::after {
+    content: "";
+    position: absolute;
+    inset: 8px -8px -8px 8px;
+    background-color: #BCA0DF;
+    border-radius: 8px;
+    transform: rotate(3deg);
+    z-index: -2;
+}
+
+/* Fita adesiva amarela */
+
+.Sobre-Fita {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 115px;
+    height: 38px;
+
+    background: repeating-linear-gradient(
+        65deg,
+        #F9CF53DD 0px,
+        #F9CF53DD 8px,
+        #FCE9A5DD 8px,
+        #FCE9A5DD 10px
+    );
+
+    transform: translateX(-50%) rotate(-6deg);
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Paleta de tinta com pincel */
+
+.Sobre-Paleta {
+    position: absolute;
+    width: 160px;
+    height: auto;
+    bottom: -40px;
+    right: -35px;
+    transform: rotate(-12deg);
+    filter: drop-shadow(0 8px 10px #15302920);
+    pointer-events: none;
+    z-index: 4;
+}
+
+/* Pincelada amarela na palavra artista */
+
+#Sobre-Textos h2 strong {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+}
+
+#Sobre-Textos h2 strong::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: -5px;
+    right: -5px;
+    height: 13px;
+    background-color: #F9CF53;
+    border-radius: 40% 15% 35% 20%;
+    transform: rotate(-3deg);
+    z-index: -1;
+}
+
+/* Etiqueta Por trás das cores */
+
+#Sobre-Textos small {
+    display: inline-block;
+    background-color: #FCE9A5;
+    color: var(--verde-principal);
+    padding: 10px 16px;
+    border-radius: 30px;
+}
+
+/* Moldura verde atrás da fotografia */
+
+#Sobre-Imagem {
+    position: relative;
+    isolation: isolate;
+}
+
+#Sobre-Imagem::before {
+    content: "";
+    position: absolute;
+    inset: 5px 12px -5px -15px;
+    background-color: #83B65B;
+    border-radius: 48% 52% 43% 57% / 52% 43% 57% 48%;
+    transform: rotate(-7deg);
+    z-index: -1;
+}
+
+/* =====================================
+   SOBRE - RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 768px) {
+
+    #Sobre {
+        flex-direction: column;
+        gap: 60px;
+        padding: 70px 8%;
+    }
+
+    #Sobre-Imagem {
+        width: 80%;
+        max-width: 350px;
+    }
+
+    #Sobre-Textos {
+        width: 100%;
+        padding: 30px 22px 65px;
+    }
+
+    #Sobre-Textos::before {
+        transform: rotate(-1deg);
+    }
+
+    #Sobre-Textos::after {
+        transform: rotate(2deg);
+    }
+
+    .Sobre-Paleta {
+        width: 100px;
+        bottom: -20px;
+        right: -10px;
+    }
+
+    .Sobre-Fita {
+        width: 90px;
+        height: 30px;
+        top: -15px;
+    }
+}
+
+#Sobre {
+    overflow: hidden;
+}
+
+/* Etiqueta amarela do portfólio */
+
+#Galeria > article:first-child small {
+    display: inline-block;
+    background-color: #FCE9A5;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+/* Pincelada amarela no título */
+
+#Galeria h2 strong {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+}
+
+#Galeria h2 strong::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: -3%;
+    width: 106%;
+    height: 12px;
+    background-color: #F5C84C;
+    border-radius: 45% 15% 35% 20%;
+    transform: rotate(-3deg);
+    z-index: -1;
+}
+
+/* Melhorar a leitura da descrição */
+
+#Galeria > article:first-child p {
+    color: #435C50;
+}
+
+/* Fundo artístico contínuo da página */
+
+body {
+    background-color: #F2F7ED;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(242, 247, 237, 0.15) 0%,
+            rgba(242, 247, 237, 0.75) 20%,
+            rgba(242, 247, 237, 0.95) 35%,
+            rgba(242, 247, 237, 0.95) 65%,
+            rgba(242, 247, 237, 0.75) 80%,
+            rgba(242, 247, 237, 0.15) 100%
+        ),
+        url('../img/Moldura Vibrante de Salpicos Coloridos.png');
+
+    background-size: 100% 100%, 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat, repeat-y;
+}
+
+/* Remover os fundos individuais das seções */
+
+#Fundo-Artistico,
+#Inicio,
+#Sobre,
+#Galeria,
+#Encomenda,
+#Contato {
+    background: transparent;
+}
+
+/* Ajuste da largura do rodapé */
+
+footer {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 60px 10% 30px;
+    background-color: #104735;
+    box-sizing: border-box;
+}
+
+#Rodape {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+   01. FILTRAGEM DO PORTFÓLIO
+================================================== */
+
+#Galeria-Menu [data-categoria] {
+    display: contents;
+}
+
+#Galeria-Menu .categoria-oculta {
+    display: none !important;
+}
+
+#Galeria-Menu li {
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#Galeria-Menu li.ativo {
+    background-color: #176B47;
+    color: #FFFFFF;
+    border-color: #176B47;
+}
+
+#Galeria-Menu li.ativo::before {
+    background-color: #FFFFFF;
+}
+
+#Galeria-Menu img {
+    cursor: zoom-in;
+}
+
+#Galeria-Vazia {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: #64766F;
+    font-size: 18px;
+}
+
+#Galeria-Vazia[hidden] {
+    display: none;
+}
+
+
+/* ==================================================
+   02. MODAL DE VISUALIZAÇÃO DAS OBRAS
+================================================== */
+
+body.modal-aberto {
+    overflow: hidden;
+}
+
+#Modal-Galeria {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 60px 80px;
+    border: none;
+    background: rgba(12, 25, 20, 0.96);
+    color: #FFFFFF;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#Modal-Galeria[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Modal-Galeria::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+#Modal-Conteudo {
+    width: fit-content;
+    max-width: 100%;
+    text-align: center;
+}
+
+#Modal-Imagem {
+    display: block;
+    max-width: 100%;
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+#Modal-Titulo {
+    margin-top: 18px;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+#Modal-Categoria {
+    margin-top: 5px;
+    color: #DCEACD;
+}
+
+#Modal-Contador {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #DCEACD;
+}
+
+
+/* ==================================================
+   03. BOTÕES DO MODAL
+================================================== */
+
+#Modal-Galeria button {
+    position: fixed;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#Modal-Galeria button:hover {
+    background-color: #176B47;
+}
+
+#Modal-Galeria button[hidden] {
+    display: none;
+}
+
+#Modal-Fechar {
+    top: 20px;
+    right: 20px;
+}
+
+#Modal-Anterior {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+#Modal-Proximo {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+
+/* ==================================================
+   04. MENU DE ACESSIBILIDADE
+================================================== */
+
+#menu-acessibilidade.oculto {
+    display: none !important;
+}
+
+#menu-acessibilidade button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* ==================================================
+   05. ALTO CONTRASTE
+================================================== */
+
+body.alto-contraste {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+body.alto-contraste *:not(img):not(svg):not(path) {
+    color: #FFFFFF !important;
+    background-color: #000000 !important;
+    background-image: none !important;
+    border-color: #FFFFFF !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+body.alto-contraste a,
+body.alto-contraste button {
+    color: #FFFF00 !important;
+}
+
+body.alto-contraste input,
+body.alto-contraste select,
+body.alto-contraste textarea {
+    border: 1px solid #FFFFFF !important;
+}
+
+body.alto-contraste input::placeholder,
+body.alto-contraste textarea::placeholder {
+    color: #DDDDDD !important;
+}
+
+body.alto-contraste #Galeria-Menu li.ativo {
+    background-color: #FFFF00 !important;
+    color: #000000 !important;
+}
+
+body.alto-contraste #Galeria-Menu li.ativo::before {
+    background-color: #000000 !important;
+}
+
+
+/* ==================================================
+   06. MENSAGENS DO FORMULÁRIO
+================================================== */
+
+#Formulario-Mensagem {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#Formulario-Mensagem:empty {
+    display: none;
+}
+
+#Formulario-Mensagem.mensagem-sucesso {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #E6F1E2;
+    color: #176B47;
+    border: 1px solid #A8C69A;
+}
+
+#Formulario-Mensagem.mensagem-erro {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #FDE8E8;
+    color: #A12626;
+    border: 1px solid #E7B4B4;
+}
+
+#Encomenda-Forms button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+
+/* ==================================================
+   07. BOTÃO VOLTAR AO TOPO
+================================================== */
+
+#Voltar-Topo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #176B47;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50%;
+    font-size: 22px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 900;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+}
+
+#Voltar-Topo.visivel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#Voltar-Topo:hover {
+    background-color: #104735;
+}
+
+
+/* ==================================================
+   08. DESTAQUE DA SEÇÃO ATUAL NO MENU
+================================================== */
+
+#Menu a.secao-ativa {
+    color: #176B47;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    text-decoration-thickness: 2px;
+}
+
+
+/* ==================================================
+   09. ANIMAÇÕES AO ROLAR A PÁGINA
+================================================== */
+
+.animar-entrada {
+    opacity: 0;
+    translate: 0 25px;
+    transition:
+        opacity 0.65s ease,
+        translate 0.65s ease;
+}
+
+.animar-entrada.revelado {
+    opacity: 1;
+    translate: 0 0;
+}
+
+
+/* ==================================================
+   10. ACESSIBILIDADE PELO TECLADO
+================================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid #176B47;
+    outline-offset: 4px;
+}
+
+body.alto-contraste :focus-visible {
+    outline-color: #FFFF00 !important;
+}
+
+
+/* ==================================================
+   11. RESPONSIVIDADE DAS NOVAS FUNCIONALIDADES
+================================================== */
+
+@media (max-width: 768px) {
+
+    #Modal-Galeria {
+        padding: 60px 45px;
+    }
+
+    #Modal-Imagem {
+        max-height: 65vh;
+    }
+
+    #Modal-Galeria button {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    #Modal-Anterior {
+        left: 5px;
+    }
+
+    #Modal-Proximo {
+        right: 5px;
+    }
+
+    #Modal-Titulo {
+        font-size: 19px;
+    }
+
+    #Voltar-Topo {
+        bottom: 20px;
+        right: 15px;
+        width: 42px;
+        height: 42px;
+    }
+
+}
+
+
+/* ==================================================
+   12. RESPEITAR PREFERÊNCIA POR MENOS ANIMAÇÕES
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    .animar-entrada {
+        opacity: 1;
+        translate: none;
+        transition: none;
+    }
+
+    #Voltar-Topo {
+        transition: none;
+    }
+
+}
